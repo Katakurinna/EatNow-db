@@ -1,5 +1,9 @@
+/*
+    Alejandro Cerrato Espejo
+    EatNow-db
+    Version 1.0
+*/
 CREATE DATABASE EATNOW;
-
 USE DATABASE EATNOW;
 
 CREATE TABLE COMPANIES (
