@@ -1,11 +1,26 @@
 /*
-    Alejandro Cerrato Espejo
-    EatNow-db
-    Version 1.0
-*/
+ Alejandro Cerrato Espejo
+ EatNow-db
+ Version 1.1
+ */
+-- Creating and using eatnow database --
 CREATE DATABASE EATNOW;
 USE DATABASE EATNOW;
 
+-- Creating users for server usage -- 
+CREATE USER 'eatnow-server' @'%' IDENTIFIED BY 'EatNowBest';
+
+GRANT INSERT, UPDATE, DELETE, SELECT ON EATNOW.* TO 'eatnow-server' @'%';
+
+-- Creating users for maintenance usage --
+CREATE USER 'eatnow-maintenance' @'%' IDENTIFIED BY 'EatNowSoftware';
+
+GRANT all privileges ON EATNOW.* TO 'eatnow-maintenance' @'%';
+
+-- Updating privileges -- 
+FLUSH PRIVILEGES;
+
+-- Creating tables for use -- 
 CREATE TABLE COMPANIES (
     ID INT PRIMARY KEY auto_increment,
     NAME VARCHAR(20),
