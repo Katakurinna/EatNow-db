@@ -11,14 +11,7 @@ USE DATABASE EATNOW;
 -- Creating users for server usage -- 
 CREATE USER 'eatnow-server' @'%' IDENTIFIED BY 'EatNowBest';
 
-GRANT
-INSERT
-,
-UPDATE
-,
-    DELETE,
-SELECT
-    ON EATNOW.* TO 'eatnow-server' @'%';
+GRANT INSERT, UPDATE, DELETE, SELECT ON EATNOW.* TO 'eatnow-server' @'%';
 
 -- Creating users for maintenance usage --
 CREATE USER 'eatnow-maintenance' @'%' IDENTIFIED BY 'EatNowSoftware';
